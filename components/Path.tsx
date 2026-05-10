@@ -2,9 +2,10 @@ import { FaChevronUp } from "react-icons/fa";
 
 export default function CareerPath() {
   const careers = [
-    { year: "2025", title: "Web Developer", company: "Company A", desc: "Mengerjakan project Laravel & Next.js" },
-    { year: "2024", title: "Frontend Intern", company: "Tech Studio", desc: "Belajar slicing UI dengan Tailwind CSS" },
-    { year: "2023", title: "SMK RPL", company: "Sekolah", desc: "Mulai belajar dasar pemrograman Java & SQL" },
+    { year: "2026 - Now", title: "Mengejar Sarjana", company: "Kampus..", desc: "" },
+    { year: "2026", title: "Lulus Sekolah Menengah Kejuruan", company: "Sekolah Menengah Kejuruan Negeri 4 Tanjungpinang", desc: "" },
+    { year: "2023", title: "Lulus Sekolah Menengah Pertama", company: "SMPS IT Imam Syafi'i/Pondok Pesantren Al-I'tishom", desc: "Lulus dengan menyelesaikan hafalan Al-Qur'an 4 Juz" },
+    { year: "2020", title: "Lulus Sekolah Dasar", company: "Sekolah Dasar Islam Terpadu Ibnu Abbas", desc: "" },
   ];
 
   return (

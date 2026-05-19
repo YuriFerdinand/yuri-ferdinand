@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 @theme {
-  --font-heading: var(--font-fraunces);
-  --font-body: var(--font-plus-jakarta-sans);
+  --font-heading: var(--font-cormorant-garamond);
+  --font-body: var(--font-geist-sans);
 }
 
 @keyframes scrollRight {
@@ -24,7 +24,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 0px;
+  scroll-padding-top: 50px;
 }
 body {
   overflow-x: hidden;

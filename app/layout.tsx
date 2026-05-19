@@ -1,15 +1,16 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans, Fraunces } from "next/font/google";
+import { Geist, Cormorant_Garamond } from "next/font/google";
+import CursorWrapper from "@/components/ui/cursor-wrapper";
 import Navbar from "@/components/Navbar";
 import "./globals.css";
 
-const jakartaSans = Plus_Jakarta_Sans({
-  variable: "--font-plus-jakarta-sans",
+const jakartaSans = Geist({
+  variable: "--font-geist-sans",
   subsets: ["latin"],
   display:"swap"
 });
-const fraunces = Fraunces({
-  variable: "--font-fraunces",
+const cormorantGaramond = Cormorant_Garamond({
+  variable: "--font-cormorant-garamond",
   subsets: ["latin"],
   display:"swap"
 });
@@ -25,14 +26,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${fraunces.variable} ${jakartaSans.variable}`}>
+    <html lang="en" className={`${cormorantGaramond.variable} ${jakartaSans.variable}`}>
       <body
-        className={`text-[#4A443F] antialiased container mx-auto px-4 font-body bg-[#fffdf7]`}
+        className={`text-[#e8e6e0] antialiased container mx-auto font-body bg-[#0f0f0f]`}
       >
      <Navbar />
+     <CursorWrapper />
         <div className="pt-5">
           {children}
         </div>
+        <footer className="text-center text-[#707070] h-16 flex justify-center items-center">
+          @2026 Yuri Ferdinand - All Right Reserved
+        </footer>
       </body>
     </html>
   );

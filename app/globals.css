@@ -28,6 +28,9 @@ html {
 }
 body {
   overflow-x: hidden;
+  --sb-track-color: #0f0f0f;
+  --sb-thumb-color: #e8e6e0;
+  --sb-size: 2px;
 }
 
 @theme inline {
@@ -55,5 +58,27 @@ body {
     100% {
       transform: translateZ(0) rotate(360deg);
     }
+  }
+}
+
+body::-webkit-scrollbar {
+  width: var(--sb-size)
+}
+
+body::-webkit-scrollbar-track {
+  background: var(--sb-track-color);
+  border-radius: 3px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: var(--sb-thumb-color);
+  border-radius: 3px;
+  
+}
+
+@supports not selector(::-webkit-scrollbar) {
+  body {
+    scrollbar-color: var(--sb-thumb-color)
+                     var(--sb-track-color);
   }
 }

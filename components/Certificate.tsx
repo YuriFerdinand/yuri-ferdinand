@@ -30,10 +30,19 @@ export default function Certificate() {
             link:"certificate/frontend-pemula.pdf"
         },
     ];
+
     return (
-        <div className="grid grid-cols-3 gap-4">
+        <div id="certificate-grid" className="grid grid-cols-3 md:grid-cols-3 gap-4">
             {items.map((item, i) => (
-            <div className="w-full h-fit bg-[#1e1e1e] p-4 rounded-lg border border-white/10 relative overflow-hidden" key={i}>
+            <div 
+                className="w-full h-fit bg-[#1e1e1e] p-4 rounded-lg border border-white/10 relative overflow-hidden" 
+                key={i} 
+                data-aos="fade-up" 
+                data-aos-delay={i * 300}
+                data-aos-duration="900"
+                data-aos-easing="ease-out-cubic"
+                data-aos-anchor="#certificate-grid"
+            >
                 <div className="flex justify-between">
                     <div className="w-fit p-2 rounded-lg bg-[#1e1e1e] border border-white/30 my-2">
                         <TbCertificate size={36} className="text-[#c9a96e]"/>
@@ -52,7 +61,7 @@ export default function Certificate() {
                         </div>
                         Verified
                     </span>
-                    <a href={`${item.link}`} target="_blank">
+                    <a href={`${item.link}`} target="_blank" rel="noreferrer">
                         <span className="font-semibold hover:text-[#c9a96e]">
                         View More
                         <GoArrowUpRight className="inline-block ml-1" />

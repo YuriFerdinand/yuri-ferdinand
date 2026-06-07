@@ -2,8 +2,12 @@
 import { useEffect, useState } from "react";
 import { IoIosHome } from "react-icons/io";
 import { FaAddressCard } from "react-icons/fa";
+import { IoMdArrowRoundBack } from "react-icons/io";
+import { usePathname } from "next/navigation";
+import Link from "next/link";
 
 export default function Navbar() {
+  const pathname = usePathname();
   const [Scroll, setScroll] = useState(false);
   const [Active, setActive] = useState("Home");
   const menuItems = [
@@ -48,15 +52,17 @@ export default function Navbar() {
   })
 
   return (
-  <nav
-    className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-      Scroll
+    <div>
+      {pathname.includes("/detail") ? 
+      (detailNav())
+      :
+      (
+        <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500
+      ${ Scroll
         ? "bg-[#0f0f0f]/90 backdrop-blur-md shadow-lg"
-        : "bg-transparent"
-    }`}
-  >
-    <div className="container mx-auto flex justify-between py-3">
-      <h1 className="font-bold text-xl">Yuri Ferdinand</h1>
+        : "bg-transparent"}`}>
+    <div className="container mx-auto flex justify-between py-3 fadeIn">
+      <Link href="/" className="font-bold text-xl">Yuri Ferdinand</Link>
       <div className="flex gap-10">
         {menuItems.map((item) => (
           <a
@@ -72,39 +78,22 @@ export default function Navbar() {
           </a>
         ))}
       </div>
-
     </div>
   </nav>
-);
+      )
+    }
+    </div>
+  )
 
-}
-
-/* 
-<nav className="fixed top-5 left-0 w-full flex justify-center z-50 px-4">
-      <div
-        className="py-4 px-6 flex items-center gap-2 bg-[#c9a96e] rounded-full transition-all duration-700 ease-in-out"
-        onMouseEnter={() => setHover(true)}
-        onMouseLeave={() => setHover(false)}
-      >
-        <h2 className="text-balck font-bold text-xl mr-8">Yuri Ferdinand</h2>
-
-        {menuItems.map((item) => (
-          <Link
-            key={item.name}
-            href={item.href}
-            className="flex items-center gap-2 text-black px-4 py-2 rounded-full hover:bg-white/10 transition-colors duration-300"
-          >
-            <span className="flex-shrink-0">{item.logo}</span>
-
-            <span
-              className={`
-                whitespace-nowrap text-sm overflow-hidden font-bold
-                transition-all duration-300 ease-in-out
-                ${Hover ? "max-w-[100px] opacity-100" : "max-w-0 opacity-0"}`}>
-              {item.name}
-            </span>
-          </Link>
-        ))}
+  function detailNav() {
+    return (
+      <div className="h-13">
+        <div className="flex h-full items-center justify-between fadeIn">
+          <Link href="/" className="border flex flex-row gap-1 p-0.5 items-center text-sm rounded-lg bg-[#1a1a1a] border-[#333333] hover:scale-125 transition-[scale] duration-300 ease-in-out"><IoMdArrowRoundBack size={28} color="#c9a96e"/></Link>
+          <Link href="/" className="font-bold text-xl">Yuri Ferdinand</Link>
+        </div>
+        <hr className="relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] border-t-[#2a2a2a] border-t-2" />
       </div>
-    </nav>
-*/
+    )
+  }
+}

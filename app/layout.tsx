@@ -30,10 +30,11 @@ export default function RootLayout({children,}: Readonly<{children: React.ReactN
       <AOSProvider>
         <Navbar />
         <CursorWrapper />
-        <div className="pt-5">
+        <div>
           {children}
         </div>
-        <footer className="text-center text-[#707070] h-16 flex justify-center items-center">
+        <hr className="relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] border-t-[#2a2a2a] border-t-2" />
+        <footer className="text-center text-[#707070] h-13 flex justify-center items-center">
           @2026 Yuri Ferdinand - All Right Reserved
         </footer>
       </AOSProvider>

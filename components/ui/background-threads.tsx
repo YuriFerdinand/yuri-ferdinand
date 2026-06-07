@@ -199,20 +199,33 @@ const Threads: React.FC<ThreadsProps> = ({
 
     // ✅ Debounce resize — tidak rebuild program, hanya update uniform
     let resizeTimer: ReturnType<typeof setTimeout>;
-    function resize() {
-      clearTimeout(resizeTimer);
-      resizeTimer = setTimeout(() => {
-        const w = container.clientWidth;
-        const h = container.clientHeight;
-        renderer.setSize(w, h);
-        program.uniforms.iResolution.value.r = w;
-        program.uniforms.iResolution.value.g = h;
-        program.uniforms.iResolution.value.b = w / h;
-      }, 150);
-    }
-    const resizeObserver = new ResizeObserver(resize); // ✅ ResizeObserver > window resize
-    resizeObserver.observe(container);
-    resize();
+let isFirstResize = true;
+
+function resize() {
+  if (isFirstResize) {
+    // Resize pertama langsung tanpa debounce
+    isFirstResize = false;
+    const w = container.clientWidth;
+    const h = container.clientHeight;
+    renderer.setSize(w, h);
+    program.uniforms.iResolution.value.r = w;
+    program.uniforms.iResolution.value.g = h;
+    program.uniforms.iResolution.value.b = w / h;
+    return;
+  }
+  clearTimeout(resizeTimer);
+  resizeTimer = setTimeout(() => {
+    const w = container.clientWidth;
+    const h = container.clientHeight;
+    renderer.setSize(w, h);
+    program.uniforms.iResolution.value.r = w;
+    program.uniforms.iResolution.value.g = h;
+    program.uniforms.iResolution.value.b = w / h;
+  }, 150);
+}
+const resizeObserver = new ResizeObserver(resize);
+resizeObserver.observe(container);
+resize();
 
     // ✅ Mouse: smoothing hanya jalan saat ada pergerakan aktif
     let currentMouse = [0.5, 0.5];

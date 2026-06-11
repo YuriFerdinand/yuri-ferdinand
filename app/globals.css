@@ -4,6 +4,7 @@
 @theme {
   --font-heading: var(--font-cormorant-garamond);
   --font-body: var(--font-geist-sans);
+  --container-padding: 1rem;
 }
 
 @keyframes scrollRight {

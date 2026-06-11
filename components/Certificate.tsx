@@ -32,7 +32,7 @@ export default function Certificate() {
     ];
 
     return (
-        <div id="certificate-grid" className="grid grid-cols-3 md:grid-cols-3 gap-4">
+        <div id="certificate-grid" className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {items.map((item, i) => (
             <div 
                 className="w-full h-fit bg-[#1e1e1e] p-4 rounded-lg border border-white/10 relative overflow-hidden" 

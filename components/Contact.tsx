@@ -15,24 +15,22 @@ export default function Contact() {
     ];
 
     return (
-        <div className="flex flex-row justify-between w-full" id="contact-grid">
+        <div className="flex flex-col gap-2 md:flex-row md:gap-6" id="contact-grid">
             {items.map((item, index) => (
                 <div 
                     key={index}
+                    className="w-full md:flex-1"
                     data-aos="fade-up" 
                     data-aos-delay={index * 300}
                     data-aos-duration="900"
                     data-aos-easing="ease-out-cubic"
                     data-aos-anchor="#contact-grid"
                 >
-                <div className=" hover:scale-105 transition-scale duration-300 ease-out
-                                "
-                                >
-
+                <div className="hover:scale-105 transition-scale duration-300 ease-out w-full">
                     <a
                         href={item.href}
                         target="_blank"
-                        className="relative w-75 h-30 bg-[#202020] flex flex-col gap-2 justify-center items-center rounded-md overflow-hidden"
+                        className="relative w-full h-30 bg-[#202020] flex flex-col gap-2 justify-center items-center rounded-md overflow-hidden"
                         onMouseEnter={() => setHoveredIndex(index)}
                         onMouseLeave={() => setHoveredIndex(null)}
                     >

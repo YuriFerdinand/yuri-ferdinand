@@ -41,7 +41,7 @@ export default function About() {
       organisation: "Organisasi Anti Perundungan Sekolah",
       description:
         "Served as part of the security division, maintaining order and preventing bullying within the school environment.",
-      type: "Organisation",
+      type: "Organization",
     },
   ];
   
@@ -52,14 +52,14 @@ export default function About() {
           Get to know me
         </p>
         <div className="flex items-end gap-4">
-          <h2 className="text-4xl md:text-5xl font-bold leading-tight">
+          <h2 className="text-4xl md:text-4xl font-bold leading-tight">
             About Me
           </h2>
           <div className="h-[2px] w-16 bg-[#c9a96e] mb-2" />
         </div>
       </div>
 
-      <section className="flex gap-8">
+      <section className="flex flex-col gap-8 md:flex-row lg:flex-row">
         <div className="flex-shrink-0" data-aos="fade-right">
             <div className="relative w-48 h-64 rounded-xl overflow-hidden border border-white/10">
               <div className="w-full h-full bg-[#2a2a2a] flex items-end p-3">
@@ -73,11 +73,11 @@ export default function About() {
             </div>
         </div>
 
-        <div className="flex flex-col justify-between" data-aos="fade-left">
-          <h3 className="text-xl text-[#c9a96e] font-semibold italic">Informatics Student - Indonesia</h3>
-          <h3 className="text-3xl font-semibold">Muhammad Yuri Ferdinand Adinata</h3>
-          <p className="text-[#707070] text-lg leading-[1.7rem]">Muhammad Yuri Ferdinand Adinata is a passionate programmer who began his journey in web development. He is currently pursuing a degree in Informatics Engineering at a university in Kepulauan Riau, Indonesia. His deep interest in programming drives him to continuously learn new technologies and never stop innovating, particularly in the field of information technology.</p>
-          <div className="flex gap-8 content-end">
+        <div className="flex flex-col justify-between gap-8" data-aos="fade-left">
+          <p className="text-md text-[#c9a96e] font-semibold italic">Informatics Student - Indonesia</p>
+          <h3 className="text-2xl font-semibold">Muhammad Yuri Ferdinand Adinata</h3>
+          <p className="text-[#707070] text-md leading-[1.7rem]">Muhammad Yuri Ferdinand Adinata is a passionate programmer who began his journey in web development. He is currently pursuing a degree in Informatics Engineering at a university in Kepulauan Riau, Indonesia. His deep interest in programming drives him to continuously learn new technologies and never stop innovating, particularly in the field of information technology.</p>
+          <div className="flex gap-8 content-end text-sm">
             <p><IoLocation className="inline mr-2 align-center" />Kepulauan Riau, Indonesia.</p>
             <p><PiStudentBold className="inline mr-2" />Informatics Student</p>
             <p><FaCode className="inline mr-2" />Web Developer</p>
@@ -111,6 +111,7 @@ export default function About() {
                       <span className="text-sm font-semibold text-white">
                         {exp.year}
                       </span>
+                    -
                     </div>
                     <span className="text-xs text-[#555]">{exp.period}</span>
                   </div>
@@ -130,7 +131,7 @@ export default function About() {
                         {exp.type}
                       </span>
                     </div>
-                    <p className="text-sm text-[#707070] leading-relaxed mt-3 max-w-lg" data-aos="zoom-out">
+                    <p className="text-sm text-[#707070] leading-relaxed mt-3 max-w-lg" data-aos="fade-left">
                       {exp.description}
                     </p>
                   </div>

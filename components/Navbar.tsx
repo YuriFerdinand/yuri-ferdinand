@@ -69,10 +69,10 @@ export default function Navbar() {
     }
 
     return (
-        <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500
+        <nav className={`px-4 md:px-0 lg:px-0 fixed top-0 left-0 right-0 z-50 transition-all duration-500
         ${scrolled ? "bg-[#0f0f0f]/90 backdrop-blur-md shadow-lg" : "bg-transparent"}`}
         >
-        <div className="container mx-auto flex justify-between items-center py-3 fadeIn">
+        <div className="container mx-auto  flex justify-between items-center py-3 fadeIn">
             <Link href="/" className="font-bold text-xl">Yuri Ferdinand</Link>
 
             <div className="hidden lg:flex gap-10">

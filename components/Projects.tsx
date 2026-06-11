@@ -20,9 +20,9 @@ export const items = [
                 "Even though this project have a lot of problem, i have learned so many valueable lesson about how to use Next.js, database ecosystem, deploying, etc."
             ],
             icon:[
-                { name: "Next.js", icon:<RiNextjsFill size={24} color="#000000" /> },
-                { name: "Laravel", icon:<FaLaravel size={24} color="#F05340" /> },
-                { name: "MySQL", icon:<SiMysql size={24} color="#4479A1" />},
+                { name: "Next.js", icon:<RiNextjsFill size={16} color="#000000" /> },
+                { name: "Laravel", icon:<FaLaravel size={16} color="#F05340" /> },
+                { name: "MySQL", icon:<SiMysql size={16} color="#4479A1" />},
             ]
         },
         {
@@ -34,9 +34,9 @@ export const items = [
             ],
             link:"#",
             icon:[
-                { name: "PHP", icon: <FaPhp size={24} color="#4F5B93" /> },
-                { name: "MySQL", icon: <SiMysql size={24} color="#4479A1" />},
-                { name: "Javascript", icon: <IoLogoJavascript size={24} color="#F0DB4F" />},
+                { name: "PHP", icon: <FaPhp size={16} color="#4F5B93" /> },
+                { name: "MySQL", icon: <SiMysql size={16} color="#4479A1" />},
+                { name: "Javascript", icon: <IoLogoJavascript size={16} color="#F0DB4F" />},
             ]
         },
     ];
@@ -44,7 +44,7 @@ export const items = [
 export default function Projects() {
 
     return (
-        <div className="grid grid-cols-3 gap-4" id="projects-grid">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4" id="projects-grid">
             {items.map((item, i) => (
                 <div key={i}  
                     data-aos="fade-up" 
@@ -75,14 +75,14 @@ export default function Projects() {
                                 <div className="flex flex-row gap-2">
                                     {item.icon.map((icon, index) => (
                                         <div key={index} className="border flex flex-row gap-1 items-center text-xs p-1 rounded-lg bg-[#1a1a1a] border-[#333333]">
-                                            <span>{icon.icon}</span>
+                                            <span className="text-base md:text-2xl lg:text-2xl">{icon.icon}</span>
                                             <p className="text-[#aaaaaa]">{icon.name}</p>
                                         </div>
                                     ))}
                                 </div>
                                 <Link href={item.link} className="flex flex-row items-center justify-end text-[#c9a96e] font-semibold">
                                     <p>View More</p>
-                                    <GoArrowUpRight size={24} />
+                                    <GoArrowUpRight size={16} />
                                 </Link>
                             </div>
                         </div>

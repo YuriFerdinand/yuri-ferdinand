@@ -3,7 +3,7 @@ import { items } from "@/components/Projects"
 export default function detailWebProdi() {
     const item = items[0];
     return(
-        <div className="flex flex-row gap-12 h-[calc(100vh-108px)]">
+        <div className="flex flex-col lg:flex-row gap-12 h-[calc(100vh-108px)]">
             <div className="flex-1 flex flex-col gap-2 my-8 fadeRight">
                 <h1 className="text-3xl font-semibold mb-4">{item.title}</h1>
                 <div className="mb-4 h-50 w-full rounded-lg bg-white">Image</div>

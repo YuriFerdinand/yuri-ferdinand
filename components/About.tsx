@@ -63,7 +63,7 @@ export default function About() {
         <div className="flex-shrink-0" data-aos="fade-right">
             <div className="relative w-48 h-64 rounded-xl overflow-hidden border border-white/10">
               <div className="w-full h-full bg-[#2a2a2a] flex items-end p-3">
-               
+              
               </div>
               {/* Accent corner */}
               <div className="absolute top-0 right-0 w-8 h-8 border-t-2 border-r-2 border-[#c9a96e] rounded-tr-xl" />
